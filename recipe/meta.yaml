@@ -10,7 +10,7 @@ source:
   sha256: f8fc9d875e4cdf502eb50ed288af17af90a5c563d0fa4622209d70cca730b7d5
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
 
@@ -20,9 +20,11 @@ requirements:
     - python >=3
   run:
     - python >=3
-    - hyperspy
+    - hyperspy >1.2
+    - scikit-image <0.15
+    - matplotlib <3.1.0
+    - scikit-learn >=0.19
     - transforms3d
-    - scikit-learn
     - diffpy.structure
 
 test:
@@ -51,3 +53,4 @@ extra:
   recipe-maintainers:
     - tschoonj
     - dnjohnstone
+    - pc494
